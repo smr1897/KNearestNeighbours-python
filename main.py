@@ -26,3 +26,7 @@ class KNearestNeighbours:
             for point in self.points[category]:
                 distance = euclidian_distance(point,new_point)
                 distances.append(distance)
+
+        categories = [category[1] for category in sorted(distances)[:self.k]]
+        result = Counter(categories).most_common(1)[0][0]
+        return result
