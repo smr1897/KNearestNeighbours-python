@@ -16,7 +16,7 @@ class KNearestNeighbours:
         self.k = k
         self.point = None
 
-    def fir(self,points):
+    def fit(self,points):
         self.points = points
 
     def predict(self,new_point):
@@ -30,3 +30,9 @@ class KNearestNeighbours:
         categories = [category[1] for category in sorted(distances)[:self.k]]
         result = Counter(categories).most_common(1)[0][0]
         return result
+
+
+
+classifier = KNearestNeighbours()
+classifier.fit(points)
+print(classifier.predict(new_point))
