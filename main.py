@@ -36,3 +36,7 @@ class KNearestNeighbours:
 classifier = KNearestNeighbours()
 classifier.fit(points)
 print(classifier.predict(new_point))
+
+axis = plt.subplot()
+axis.grid(True,color="#323232")
+axis.figure.set_facecolor("#121212")
